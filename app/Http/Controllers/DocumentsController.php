@@ -84,9 +84,10 @@ class DocumentsController extends Controller
      */
     public function upload($file, $name=null)
     {   
-        $path = Storage::putFileAs('documents', $file, $name);
+        //$path = Storage::putFileAs('documents', $file, $name);
         $name = time() . '_' . $name . '.' . $file->getClientOriginalExtension();
-
+        $path = Storage::putFileAs('documents', $file, $name);
+        
         return "$name";       
     }
     /**
